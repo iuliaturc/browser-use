@@ -27,7 +27,7 @@ async def run_download():
 		llm=llm,
 		max_actions_per_step=8,
 		use_vision=True,
-		browser=browser,
+		browser_object=browser,
 	)
 	await agent.run(max_steps=25)
 	await browser.close()

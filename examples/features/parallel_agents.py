@@ -22,7 +22,7 @@ llm = ChatOpenAI(model='gpt-4o')
 
 async def main():
 	agents = [
-		Agent(task=task, llm=llm, browser=browser)
+		Agent(task=task, llm=llm, browser_object=browser)
 		for task in [
 			'Search Google for weather in Tokyo',
 			'Check Reddit front page title',
@@ -43,7 +43,7 @@ async def main():
 	agentX = Agent(
 		task='Go to apple.com and return the title of the page',
 		llm=llm,
-		browser=browser,
+		browser_object=browser,
 		# browser_context=context,
 	)
 	await agentX.run()

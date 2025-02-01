@@ -100,7 +100,7 @@ def create_twitter_agent(config: TwitterConfig) -> Agent:
         """,
         llm=llm,
         controller=controller,
-        browser=browser,
+        browser_object=browser,
     )
 
 
