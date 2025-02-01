@@ -54,7 +54,7 @@ class TestAgent:
 		"""
 		# Arrange
 		agent = Agent(
-			task='Test task', llm=mock_llm, controller=mock_controller, browser=mock_browser, browser_context=mock_browser_context
+			task='Test task', llm=mock_llm, controller=mock_controller, browser_object=mock_browser, browser_context=mock_browser_context
 		)
 		initial_actions = [{'test_action': {'param1': 'value1', 'param2': 'value2'}}]
 

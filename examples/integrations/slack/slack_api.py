@@ -20,7 +20,7 @@ class SlackBot:
     def __init__(self, llm: BaseChatModel, bot_token: str, signing_secret: str, ack: bool = False, browser_config: BrowserConfig = BrowserConfig(headless=True)):
         if not bot_token or not signing_secret:
             raise ValueError("Bot token and signing secret must be provided")
-        
+
         self.llm = llm
         self.ack = ack
         self.browser_config = browser_config
@@ -65,7 +65,7 @@ class SlackBot:
     async def run_agent(self, task: str) -> str:
         try:
             browser = Browser(config=self.browser_config)
-            agent = Agent(task=task, llm=self.llm, browser=browser)
+            agent = Agent(task=task, llm=self.llm, browser_object=browser)
             result = await agent.run()
 
             agent_message = None

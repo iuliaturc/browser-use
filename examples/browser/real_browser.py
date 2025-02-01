@@ -25,7 +25,7 @@ async def main():
 	agent = Agent(
 		task='In docs.google.com write my Papa a quick letter',
 		llm=ChatOpenAI(model='gpt-4o'),
-		browser=browser,
+		browser_object=browser,
 	)
 
 	await agent.run()

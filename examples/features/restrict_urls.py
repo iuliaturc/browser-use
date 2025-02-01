@@ -33,7 +33,7 @@ browser = Browser(
 agent = Agent(
 	task=task,
 	llm=llm,
-	browser=browser,
+	browser_object=browser,
 )
 
 

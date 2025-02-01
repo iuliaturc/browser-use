@@ -56,7 +56,7 @@ agent = Agent(
 	task=args.query,
 	llm=llm,
 	controller=controller,
-	browser=browser,
+	browser_object=browser,
 	use_vision=True,
 	max_actions_per_step=1,
 )

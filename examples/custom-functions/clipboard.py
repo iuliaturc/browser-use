@@ -47,7 +47,7 @@ async def main():
 		task=task,
 		llm=model,
 		controller=controller,
-		browser=browser,
+		browser_object=browser,
 	)
 
 	await agent.run()

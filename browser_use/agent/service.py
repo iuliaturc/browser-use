@@ -64,7 +64,7 @@ class Agent:
 		self,
 		task: str,
 		llm: BaseChatModel,
-		browser: Browser | None = None,
+		browser_object: Browser | None = None,
 		browser_context: BrowserContext | None = None,
 		controller: Controller = Controller(),
 		use_vision: bool = True,
@@ -115,12 +115,12 @@ class Agent:
 		self.max_actions_per_step = max_actions_per_step
 
 		# Browser setup
-		self.injected_browser = browser is not None
+		self.injected_browser = browser_object is not None
 		self.injected_browser_context = browser_context is not None
 		self.message_context = message_context
 
 		# Initialize browser first if needed
-		self.browser = browser if browser is not None else (None if browser_context else Browser())
+		self.browser = browser_object if browser_object is not None else (None if browser_context else Browser())
 
 		# Initialize browser context
 		if browser_context:

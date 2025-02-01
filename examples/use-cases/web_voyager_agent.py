@@ -50,7 +50,7 @@ async def main():
 	agent = Agent(
 		task=TASK,
 		llm=llm,
-		browser=browser,
+		browser_object=browser,
 		validate_output=True,
 	)
 	history = await agent.run(max_steps=50)
